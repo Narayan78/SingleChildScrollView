@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:lily_paper/first.dart';
 void main()
 {
   runApp(const MyApp());
@@ -43,31 +44,42 @@ class _ContainerDemoState extends State<ContainerDemo> {
             const SizedBox(
               height: 30,
             ),
+            const Text('New Tranding ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22)),
+            const SizedBox(
+              height: 30,
+            ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
+                
                   
                   Padding(
                     padding: const EdgeInsets.all(3.0),
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        gradient: LinearGradient(
-                          colors: [
-                            Color(0xFFceb0cf),
-                            Color(0xFFbe77bf),
-                            Color(0xFFb281b3)
-                          ]
+                    child: InkWell(
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          gradient: LinearGradient(
+                            colors: [
+                              Color(0xFFceb0cf),
+                              Color(0xFFbe77bf),
+                              Color(0xFFb281b3)
+                            ]
+                          ),
+                          image: DecorationImage(
+                            image: AssetImage('assets/third.png'),
+                            fit: BoxFit.cover,
+                          )
                         ),
-                        image: DecorationImage(
-                          image: AssetImage('assets/third.png'),
-                          fit: BoxFit.cover,
-                        )
+                                       
                       ),
-                   
+                      onTap: (){
+                        Navigator.push(context, 
+                        MaterialPageRoute(builder: (context) => const First()));
+                      },
                     ),
                   ),
                   Padding(
@@ -167,16 +179,19 @@ class _ContainerDemoState extends State<ContainerDemo> {
             Padding(
               padding: const EdgeInsets.all(4.0),
               child: Container(
-          height: 150,
-          width: 150,
-          decoration: const BoxDecoration(
-             borderRadius: BorderRadius.all(Radius.circular(10)),
-               gradient: LinearGradient(
-                            colors: [
-                              Color(0xFFceb0cf),
-                              Color(0xFFbe77bf),
-                              Color(0xFFb281b3)
-                            ]
+                height: 150,
+                width: 150,
+                decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                gradient: LinearGradient(
+                colors: [
+                 Color(0xFFceb0cf),
+                 Color(0xFFbe77bf),
+                 Color(0xFFb281b3)
+            
+             ]
+
+
           ),
            image: DecorationImage(
                             image: AssetImage('assets/row.png'),
@@ -217,8 +232,8 @@ class _ContainerDemoState extends State<ContainerDemo> {
                colors: [
                  Color(0xFFceb0cf),
                 Color(0xFFbe77bf),
-                              Color(0xFFb281b3)
-                            ]
+                Color(0xFFb281b3)
+                ]
           ),
            image: DecorationImage(
                             image: AssetImage('assets/white.png'),
